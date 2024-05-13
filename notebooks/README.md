@@ -1,6 +1,5 @@
-# AlphaCare Insurance Solutions (ACIS)
-## Project Objective
-This repository is dedicated to a data analysis project on historical car insurance claim data from South Africa, utilizing all four types of data analytics:
+## Project Overview
+The project utilizes all four types of data analytics: descriptive, diagnostic, predictive, and prescriptive. 
 
 ### Descriptive Analytics 
 Analyzing historical data to understand patterns such as claim frequency, claim amounts, types of claims, customer demographics, and geographical patterns.
