@@ -5,7 +5,7 @@ from tabulate import tabulate
 
 
 # Function to plot histograms for numerical variables
-def plot_numerical_histograms(df):
+def plot_histograms(df):
     numerical_cols = df.select_dtypes(include=np.number).columns.tolist()
     for col in numerical_cols:
         plt.figure(figsize=(8, 6))
@@ -17,7 +17,7 @@ def plot_numerical_histograms(df):
         plt.show()
 
 # Function to plot bar charts for categorical variables
-def plot_categorical_bar_charts(df):
+def plot_bar_charts(df):
     categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
     for col in categorical_cols:
         plt.figure(figsize=(8, 6))
@@ -30,7 +30,7 @@ def plot_categorical_bar_charts(df):
         plt.show()
 
 # Function to plot histograms for a single numerical column
-def plot_numerical_histogram(df, col):
+def plot_histogram(df, col):
     plt.figure(figsize=(8, 6))
     plt.hist(df[col], bins=20, color='skyblue', edgecolor='black')
     plt.title(f'Histogram of {col}')
@@ -40,7 +40,7 @@ def plot_numerical_histogram(df, col):
     plt.show()
 
 # Function to plot bar charts for a single categorical column
-def plot_categorical_bar_chart(df, col):
+def plot_bar_chart(df, col):
     plt.figure(figsize=(8, 6))
     df[col].value_counts().plot(kind='bar', color='skyblue')
     plt.title(f'Bar Chart of {col}')
