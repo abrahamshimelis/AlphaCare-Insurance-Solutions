@@ -74,3 +74,26 @@ def display_summary_table(data_summary):
     for col, summary in data_summary.items():
         print(f"\n{col}:\n{tabulate(summary.reset_index(), headers='keys', tablefmt='psql')}")
 
+
+def scatter_plot(data, col_x, col_y):
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x=col_x, y=col_y, data=data)
+    plt.title(f'Scatter Plot of {col_x} vs. {col_y}')
+    plt.xlabel(col_x)
+    plt.ylabel(col_y)
+    plt.show()
+
+def scatter_plot_advanced(data, col_x, col_y, hue):
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x=col_x, y=col_y, hue=hue, data=data)
+    plt.title(f'Scatter Plot of {col_x} vs. {col_y} by {hue}')
+    plt.xlabel(col_x)
+    plt.ylabel(col_y)
+    plt.show()
+
+def box_plots(df):
+    for column in df:
+        plt.figure(figsize=(10, 5))
+        sns.boxplot(x=df[column])
+        plt.title(f'Box plot of {column}')
+        plt.show()
